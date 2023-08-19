@@ -32,5 +32,10 @@ s/,//g
 convert single line defines to global assignments
 s/#define\s\+\(\S\+\)\s\+\(.\+\)/\1 = \2/g
 
+
+# replace C int types with python ctypes equivalent
+%s/uint\(\d\+\)_t/c_uint\1/g
+%s/int\(\d\+\)_t/c_int\1/g
+
 ```
 
